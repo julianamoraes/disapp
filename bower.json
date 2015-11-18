@@ -1,0 +1,21 @@
+{
+  "name": "disapp",
+  "version": "0.0.0",
+  "authors": [
+    "Juliana Moraes"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3",
+    "angular-route": "1.3",
+    "bootstrap": "~3.3.5",
+    "angular-resource": "1.3"
+  }
+}

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DISAPP</title>
+</head>
+<body>
+	<h1>Encontre e ajude outros a encontrar pessoas desaparecidas.</h1>
+	<p><%=nome%></p>
+</body>
+</html>
