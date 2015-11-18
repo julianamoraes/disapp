@@ -3,11 +3,13 @@
 		Encontre e ajude a encontrar pessoas desaparecidas.
 	</h1>
 </div>
+<p ng-show="mensagem.texto">{{mensagem.texto}}</p>
 <button class="btn btn-primary" ng-click="incrementa()">
 	Novo
 </button>
 <input ng-model="filtro" type="search" placeholder="parte do nome">
-<p>Pessoas desaparecidas: {{desaparecidos.length}}</p>
+<p ng-show="desaparecidos.length">Pessoas desaparecidas: {{desaparecidos.length}}</p>
+<p class="text-info" ng-hide="desaparecidos.length">Não há desaparecidos cadastrados.</p>
 <div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
@@ -15,13 +17,13 @@
 			<th>E-mail</th>
 			<th class="text-center">Ação</th>
 		</tr>
-		<tr ng-repeat="desap in desaparecidos | filter: filtro">
+		<tr ng-repeat="desaparecido in desaparecidos | filter: filtro">
 			<td>
-				<a>{{desap.nome}}</a>
+				<a ng-href="#/desaparecido/{{desaparecido._id}}">{{desaparecido.nome}}</a>
 			</td>
-			<td>{{desap.email}}</td>
+			<td>{{desaparecido.email}}</td>
 			<td class="text-center">
-				<button ng-click="remove(desap)" class="btn btn-warning">
+				<button ng-click="remove(desaparecido)" class="btn btn-warning">
 					Remover
 				</button>
 			</td>

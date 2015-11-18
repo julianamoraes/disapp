@@ -1,7 +1,11 @@
 angular.module('disapp').controller('DesaparecidosController',
-	function ($scope, $resource) {
+	function ($resource, $scope) {
+
 		$scope.desaparecidos = [];
+		
 		$scope.filtro = '';
+		
+		$scope.mensagem = {texto: ''};
 
 		/*$scope.init = function() {
 			buscaDesaparecidos();
@@ -15,12 +19,14 @@ angular.module('disapp').controller('DesaparecidosController',
 			Desaparecido.query(
 				function(desaparecidos) {
 					$scope.desaparecidos = desaparecidos;
+					$scope.mensagem = {};
 				},
 				function(erro) {
-					console.log("Não foi possível obter a lista de desaparecidos.");
 					console.log(erro);
-				}
-			);
+					$scope.mensagem = {
+						texto: 'Não foi possível obter a lista.'
+					};
+				});
 		}
 		buscaDesaparecidos();
 
@@ -28,7 +34,9 @@ angular.module('disapp').controller('DesaparecidosController',
 			Desaparecido.delete({id: desaparecido._id},
 				buscaDesaparecidos,
 				function(erro) {
-					console.log("Não foi  possível remover.");
+					$scope.mensagem = {
+						texto: 'Não foi possível remover.'
+					};
 					console.log(erro);
 				});
 		};	
