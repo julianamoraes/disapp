@@ -4,9 +4,9 @@
 	</h1>
 </div>
 <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
-<button class="btn btn-primary" ng-click="incrementa()">
-	Novo
-</button>
+<a ng-href="#/desaparecido" class="btn btn-primary">
+	Novo Desaparecido
+</a>
 <input ng-model="filtro" type="search" placeholder="parte do nome">
 <p ng-show="desaparecidos.length">Pessoas desaparecidas: {{desaparecidos.length}}</p>
 <p class="text-info" ng-hide="desaparecidos.length">Não há desaparecidos cadastrados.</p>

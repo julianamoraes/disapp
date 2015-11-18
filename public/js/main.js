@@ -8,5 +8,9 @@ angular.module('disapp', ['ngRoute', 'ngResource'])
 			templateUrl: 'partials/desaparecido.html',
 			controller: 'DesaparecidoController'
 		});
+		$routeProvider.when('/desaparecido', {
+			templateUrl: 'partials/desaparecido.html',
+			controller: 'DesaparecidoController'
+		});
 		$routeProvider.otherwise({redirectTo: '/desaparecidos'});
 });

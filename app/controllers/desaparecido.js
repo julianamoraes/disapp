@@ -4,6 +4,8 @@ var desaparecidos = [
 	{_id: 3, nome: 'Desaparecido 3', email: 'cont3@gmail.com'}
 ];
 
+var ID_DESAPARECIDO_INC = 3;
+
 module.exports = function() {
 	var controller = {};
 	controller.listaDesaparecidos = function(req, res) {
@@ -29,4 +31,28 @@ module.exports = function() {
 		res.send(204).end();
 		//console.log('API: removeDesaparecido: ' + idDesaparecido);
 	};
+
+	controller.salvaDesaparecido = function(req, res) {
+		 var desaparecido = req.body;
+		 desaparecido = desaparecido._id ?
+		 	atualiza(desaparecido) :
+		 	adiciona(desaparecido);
+		 res.json(desaparecido);
+	};
+
+	function adiciona(desaparecidoNovo) {
+		desaparecidoNovo._id = ++ID_DESAPARECIDO_INC;;
+		desaparecidos.push(desaparecidoNovo);
+		return desaparecidoNovo;
+	}
+
+	function atualiza(desaparecidoAlterar) {
+		desaparecidos = desaparecidos.map(function(desaparecido) {
+			if(desaparecido._id == desaparecidoAlterar._id) {
+				desaparecido = desaparecidoAlterar;
+			}
+			return desaparecido;
+		});
+		return desaparecidoAlterar;
+	}
 }

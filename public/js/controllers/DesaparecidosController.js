@@ -14,6 +14,7 @@ angular.module('disapp').controller('DesaparecidosController',
 		$scope.init();*/
 
 		var Desaparecido = $resource('/desaparecidos/:id');
+		//nao deu certo instanciar o resource pelo service
 
 		function buscaDesaparecidos() {
 			Desaparecido.query(
