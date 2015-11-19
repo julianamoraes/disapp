@@ -22,8 +22,8 @@ angular.module('disapp').controller('DesaparecidoController',
 		}
 
 		$scope.salva = function() {
-			$scope.desaparecido.$save()
-				.then(function() {
+			Desaparecido.save($scope.desaparecido)
+				.$promise.then(function(data){
 					$scope.mensagem = {texto: 'Salvo com sucesso.'};
 					//limpar form
 					$scope.desaparecido = new Desaparecido();
@@ -32,4 +32,5 @@ angular.module('disapp').controller('DesaparecidoController',
 					$scope.mensagem = {texto: 'Não foi possível salvar.'}
 				});
 		};
+		
 });
