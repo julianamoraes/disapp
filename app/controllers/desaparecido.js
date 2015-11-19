@@ -21,14 +21,13 @@ module.exports = function() {
 		res.json(desaparecido) :
 		res.status(404).send('Desaparecido não encontrado.');
 	}
-	return controller;
-
+	
 	controller.removeDesaparecido = function(req, res) {
 		var idDesaparecido = req.params.id;
 		desaparecidos = desaparecidos.filter(function(desaparecido) {
 			return desaparecido._id != idDesaparecido;
 		});
-		res.send(204).end();
+		res.status(204).end();
 		//console.log('API: removeDesaparecido: ' + idDesaparecido);
 	};
 
@@ -55,4 +54,5 @@ module.exports = function() {
 		});
 		return desaparecidoAlterar;
 	}
+	return controller;
 }
