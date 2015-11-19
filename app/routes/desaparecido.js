@@ -6,12 +6,12 @@ module.exports = function(app) {
 	app.route('/desaparecidos')
 		.get(controller.listaDesaparecidos)
 		.post(function(req, res) {
-	        controller.salvaDesaparecido;
+	        controller.salvaDesaparecido(req, res);
 	    });
 	app.route('/desaparecidos/:id')
 		.get(controller.obtemDesaparecido)
 		.delete(function(req, res) {
-	        controller.removeDesaparecido;
+	        controller.removeDesaparecido(req, res);
 	    });
 
 };
