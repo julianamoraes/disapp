@@ -7,24 +7,30 @@
 <a ng-href="#/desaparecido" class="btn btn-primary">
 	Relatar Desaparecimento
 </a>
-<input ng-model="filtro" type="search" placeholder="parte do nome">
-<p ng-show="desaparecidos.length">Pessoas desaparecidas: {{desaparecidos.length}}</p>
+<hr>
+<div>
+	<label for="filtro">Buscar</label>
+	<input ng-model="filtro" type="search" placeholder="parte do nome" id="filtro">	
+</div>
+<hr>
+<p ng-show="desaparecidos.length">Número de relatos: {{desaparecidos.length}}</p>
+<hr>
 <p class="text-info" ng-hide="desaparecidos.length">Não há desaparecidos cadastrados.</p>
 <div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
 			<th>Nome</th>
-			<th>E-mail</th>
+			<th>Data do último contato</th>
 			<th class="text-center">Ação</th>
 		</tr>
 		<tr ng-repeat="desaparecido in desaparecidos | filter: filtro">
 			<td>
-				<a ng-href="#/desaparecido/{{desaparecido._id}}">{{desaparecido.nome}}</a>
+				<a ng-href="#/desaparecido/{{desaparecido._id}}">{{desaparecido.nomeDesap}}</a>
 			</td>
-			<td>{{desaparecido.email}}</td>
+			<td>{{desaparecido.ultimoContato}}</td>
 			<td class="text-center">
 				<button ng-click="remove(desaparecido)" class="btn btn-warning">
-					Remover
+					Encontrei!
 				</button>
 			</td>
 		</tr>
