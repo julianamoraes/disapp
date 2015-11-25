@@ -1,21 +1,102 @@
-<h1 class="text-center">Desaparecido</h1>
+<h1 class="text-center">Relatar Desaparecimento</h1>
 <p ng-show="mensagem.texto">
 	{{mensagem.texto}}
 </p>
 <form ng-submit="salva()">
+	<div>
+		<hr>
+		<p>Seus dados</p>
+		<hr>
+	</div>
 	<div class="form-group">
-		<label for="nome">Nome Completo</label>
+		<label for="nome">Seu nome</label>
 		<input type="text" class="form-control" id="nome"
 		name="nome" required ng-model="desaparecido.nome">		
 	</div>
 	<div class="form-group">
-		<label for="email">Email</label>
+		<label for="email">Seu e-mail</label>
 		<div class="input-group">
 			<span class="input-group-addon">@</span>
 			<input type="email" class="form-control" id="email"
 			placeholder="email@exemplo.com" name="email"
 			ng-model="desaparecido.email" required>			
 		</div>
+	</div>
+	<div class="form-group">
+		<label for="telefone">Seu telefone</label>
+		<input type="tel" class="form-control" id="telefone" name="telefone"
+		ng-model="desaparecido.telefone" required>			
+	</div>
+	<div class="form-group">
+		<label for="parentesco">Grau de Parentesco</label>
+		<select class="form-control" id="parentesco" name="parentesco"
+		ng-model="desaparecido.parentesco" required>
+		  <option>Pai</option>
+		  <option>Mãe</option>
+		  <option>Avó</option>
+		  <option>Tio</option>
+		  <option>Irmão</option>
+		  <option>Amigo</option>
+		</select>		
+	</div>
+	<div>
+		<hr>
+		<p>Dados da pessoa desaparecida</p>
+		<hr>
+	</div>
+	<div class="form-group">
+		<label for="nomeDesap">Nome Completo</label>
+		<input type="text" class="form-control" id="nomeDesap"
+		name="nomeDesap" required ng-model="desaparecido.nomeDesap">		
+	</div>
+	<div class="form-group">
+		<label for="apelido">Apelido</label>
+		<input type="text" class="form-control" id="apelido"
+		name="apelido" required ng-model="desaparecido.apelido">		
+	</div>
+	<div class="form-group">
+		<label for="dataNasc">Data de Nascimento</label>
+		<input type="date" class="form-control" id="dataNasc"
+		name="dataNasc" required ng-model="desaparecido.dataNasc">		
+	</div>
+	<div class="form-group">
+		<label for="ultimoContato">Data do último contato</label>
+		<input type="date" class="form-control" id="ultimoContato"
+		name="ultimoContato" required ng-model="desaparecido.ultimoContato">		
+	</div>
+	<div class="form-group">
+		<label for="categoria">Categoria</label>
+		<select class="form-control" id="categoria" name="categoria"
+		ng-model="desaparecido.categoria" required>
+		  <option>Adoção</option>
+		  <option>Perda de Contato</option>
+		  <option>Desaparecido sem causa</option>
+		</select>		
+	</div>
+	<div class="form-group">
+		<label for="bo">Registrou Boletim de Ocorrência?</label>
+		<input type="checkbox" id="bo"
+		name="bo" required ng-model="desaparecido.bo">	
+	</div>
+	<div class="form-group">
+		<label for="ciente">Estou ciente de que devo reportar ao site quando encontrar a pessoa procurada.</label>
+		<input type="checkbox" id="ciente"
+		name="ciente" required ng-model="desaparecido.ciente">	
+	</div>
+	<div>
+		<hr>
+		<p>Dados para futuras consultas</p>
+		<hr>
+	</div>
+	<div class="form-group">
+		<label for="senha">Digite uma nova senha</label>
+		<input type="password" class="form-control" id="senha"
+		name="senha" required ng-model="desaparecido.senha">		
+	</div>
+	<div class="form-group">
+		<label for="confirmSenha">Confirme sua senha</label>
+		<input type="password" class="form-control" id="confirmSenha"
+		name="confirmSenha" required ng-model="desaparecido.confirmSenha">		
 	</div>
 	<div>
 		<button type="submit" class="btn btn-primary">
